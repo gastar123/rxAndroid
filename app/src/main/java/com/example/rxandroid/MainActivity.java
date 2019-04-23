@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private LinearLayout llMain;
-    private int i;
     private LinearLayout.LayoutParams lParams;
     private int wrapContent = LinearLayout.LayoutParams.WRAP_CONTENT;
 
@@ -47,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .subscribe(new Observer<PictureUrl>() {
+
+                    private int i;
+                    
                     @Override
                     public void onSubscribe(Disposable d) {
 
