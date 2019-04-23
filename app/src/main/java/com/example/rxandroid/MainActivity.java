@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView imageView;
     private LinearLayout llMain;
+    private int i;
     private LinearLayout.LayoutParams lParams;
     private int wrapContent = LinearLayout.LayoutParams.WRAP_CONTENT;
 
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                             imageView = new ImageView(MainActivity.this);
                             Picasso.with(MainActivity.this).load(pictureUrl.getPicUrl()).into(imageView);
                             llMain.addView(imageView, lParams);
+                            i ++;
                     }
 
                     @Override
@@ -64,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onComplete() {
-
+                        Toast.makeText(MainActivity.this, "Загружено " + String.valueOf(i) + " изображений", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
